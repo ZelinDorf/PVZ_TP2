@@ -23,6 +23,7 @@
     <ClCompile Include="DummyEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Life.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Plant_PVZ.cpp" />
     <ClCompile Include="Projectile.cpp" />
@@ -37,6 +38,7 @@
     <ClInclude Include="DummyEntity.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Life.h" />
     <ClInclude Include="Plant_PVZ.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="PVZ_Scene.h" />

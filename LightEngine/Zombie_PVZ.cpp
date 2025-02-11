@@ -11,3 +11,7 @@ void Zombie_PVZ::OnUpdate()
 	if (mShape.getPosition().x <= pPlant->GetPosition().x + 100)
 		mSpeed = 0.f;
 }
+
+void Zombie_PVZ::OnCollision(Entity* collidedWith)
+{
+}

@@ -15,6 +15,15 @@ class PVZ_Scene : public Scene
 
 public:
 
+	enum class Tag
+	{
+		Plant,
+		Zombie,
+		Projectile,
+
+		Count
+	};
+
 	void OnInitialize() override;
 	void OnEvent(const sf::Event& event) override;
 	void OnUpdate() override;

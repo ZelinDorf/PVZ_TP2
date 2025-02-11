@@ -46,6 +46,9 @@
     <ClCompile Include="Projectile.cpp">
       <Filter>PVZ</Filter>
     </ClCompile>
+    <ClCompile Include="Life.cpp">
+      <Filter>PVZ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -79,6 +82,9 @@
       <Filter>PVZ</Filter>
     </ClInclude>
     <ClInclude Include="Projectile.h">
+      <Filter>PVZ</Filter>
+    </ClInclude>
+    <ClInclude Include="Life.h">
       <Filter>PVZ</Filter>
     </ClInclude>
   </ItemGroup>

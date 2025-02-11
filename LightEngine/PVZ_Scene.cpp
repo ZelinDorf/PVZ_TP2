@@ -11,14 +11,17 @@ void PVZ_Scene::OnInitialize()
 	pPlant1 = CreateEntity<Plant_PVZ>(50, sf::Color::Green);
 	pPlant1->SetPosition(100, 150);
 	pPlant1->SetRigidBody(true);
+	pPlant1->SetTag((int)Tag::Plant);
 
 	pPlant2 = CreateEntity<Plant_PVZ>(50, sf::Color::Green);
 	pPlant2->SetPosition(100, 350);
 	pPlant2->SetRigidBody(true);
+	pPlant2->SetTag((int)Tag::Plant);
 
 	pPlant3 = CreateEntity<Plant_PVZ>(50, sf::Color::Green);
 	pPlant3->SetPosition(100, 550);
 	pPlant3->SetRigidBody(true);
+	pPlant3->SetTag((int)Tag::Plant);
 
 	pRectUp = new Debug();
 	pRectDown = new Debug();
@@ -41,17 +44,17 @@ void PVZ_Scene::OnEvent(const sf::Event& event)
 
 			if (event.mouseButton.y >= 75 && event.mouseButton.y <= 225)
 			{
-				bullet->SetPosition(175, 150);
+				bullet->SetPosition(pPlant1->GetPosition().x + 75, pPlant1->GetPosition().y);
 				bullet->GoToDirection(1280, 150, 150.f);
 			}
 			if (event.mouseButton.y >= 275 && event.mouseButton.y <= 425)
 			{
-				bullet->SetPosition(175, 350);
+				bullet->SetPosition(pPlant2->GetPosition().x + 75, pPlant2->GetPosition().y);
 				bullet->GoToDirection(1280, 350, 150.f);
 			}
 			if (event.mouseButton.y >= 475 && event.mouseButton.y <= 625)
 			{
-				bullet->SetPosition(175, 550);
+				bullet->SetPosition(pPlant3->GetPosition().x + 75, pPlant3->GetPosition().y);
 				bullet->GoToDirection(1280, 550, 150.f);
 			}
 		}
@@ -67,6 +70,7 @@ void PVZ_Scene::OnEvent(const sf::Event& event)
 		{
 			Zombie_PVZ* zombie = CreateEntity<Zombie_PVZ>(35, sf::Color::Red);
 			zombie->SetRigidBody(true);
+			zombie->SetTag((int)Tag::Zombie);
 
 			if (event.mouseButton.y >= 75 && event.mouseButton.y <= 225)
 			{

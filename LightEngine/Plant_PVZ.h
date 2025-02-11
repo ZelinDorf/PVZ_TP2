@@ -4,5 +4,9 @@
 
 class Plant_PVZ : public Entity
 {
+
+public:
+
+	void OnCollision(Entity* collidedWith) override;
 };
 

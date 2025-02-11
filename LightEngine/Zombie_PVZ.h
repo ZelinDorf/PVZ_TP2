@@ -11,5 +11,6 @@ public:
 
 	void SetPlant(Plant_PVZ* plant);
 	void OnUpdate() override;
+	void OnCollision(Entity* collidedWith) override;
 };
 
