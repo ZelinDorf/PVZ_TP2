@@ -22,7 +22,7 @@ void Plant_PVZ::OnUpdate()
 
 	for (int i = 0; i < mZombies.size(); i++)
 	{
-		if (mZombies[i]->GetHP() <= 0)
+		if (!mZombies[i]->IsDead())
 			mZombies.erase(mZombies.begin() + i);
 		TransitionTo(PlantState::Idle);
 	}

@@ -72,31 +72,34 @@ void PVZ_Scene::OnEvent(const sf::Event& event)
 			|| event.mouseButton.y >= 275 && event.mouseButton.y <= 425 
 			|| event.mouseButton.y >= 475 && event.mouseButton.y <= 625)
 		{
-			Zombie_PVZ* zombie = CreateEntity<Zombie_PVZ>(35, sf::Color::Red);
-			zombie->SetRigidBody(true);
-			zombie->SetLife(10);
-			zombie->SetTag((int)Tag::Zombie);
+			if(!pPlant1->IsDead() || !pPlant2->IsDead() || !pPlant3->IsDead())
+			{
+				Zombie_PVZ* zombie = CreateEntity<Zombie_PVZ>(35, sf::Color::Red);
+				zombie->SetRigidBody(true);
+				zombie->SetLife(10);
+				zombie->SetTag((int)Tag::Zombie);
 
-			if (event.mouseButton.y >= 75 && event.mouseButton.y <= 225)
-			{
-				zombie->SetPlant(pPlant1);
-				zombie->SetPosition(event.mouseButton.x, event.mouseButton.y);
-				//zombie->GoToPosition(100, 150, 75.f);
-				pPlant1->AddZombie(zombie);
-			}
-			if (event.mouseButton.y >= 275 && event.mouseButton.y <= 425)
-			{
-				zombie->SetPlant(pPlant2);
-				zombie->SetPosition(event.mouseButton.x, event.mouseButton.y);
-				zombie->GoToPosition(100, 350, 75.f);
-				pPlant2->AddZombie(zombie);
-			}
-			if (event.mouseButton.y >= 475 && event.mouseButton.y <= 625)
-			{
-				zombie->SetPlant(pPlant3);
-				zombie->SetPosition(event.mouseButton.x, event.mouseButton.y);
-				zombie->GoToPosition(100, 550, 75.f);
-				pPlant3->AddZombie(zombie);
+				if (event.mouseButton.y >= 75 && event.mouseButton.y <= 225 && !pPlant1->IsDead())
+				{
+					zombie->SetPlant(pPlant1);
+					zombie->SetPosition(event.mouseButton.x, event.mouseButton.y);
+					//zombie->GoToPosition(100, 150, 75.f);
+					pPlant1->AddZombie(zombie);
+				}
+				if (event.mouseButton.y >= 275 && event.mouseButton.y <= 425 && !pPlant2->IsDead())
+				{
+					zombie->SetPlant(pPlant2);
+					zombie->SetPosition(event.mouseButton.x, event.mouseButton.y);
+					zombie->GoToPosition(100, 350, 75.f);
+					pPlant2->AddZombie(zombie);
+				}
+				if (event.mouseButton.y >= 475 && event.mouseButton.y <= 625 && !pPlant3->IsDead())
+				{
+					zombie->SetPlant(pPlant3);
+					zombie->SetPosition(event.mouseButton.x, event.mouseButton.y);
+					zombie->GoToPosition(100, 550, 75.f);
+					pPlant3->AddZombie(zombie);
+				}
 			}
 		}
 

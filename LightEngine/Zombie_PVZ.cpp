@@ -14,7 +14,7 @@ void Zombie_PVZ::OnUpdate()
 	if (IsDead())
 		Destroy();
 
-	if (pPlant->GetHP() <= 0)
+	if (pPlant->IsDead())
 		mCurrentState = ZombieState::Idle;
 
 	if (mCurrentState == ZombieState::Walk)
